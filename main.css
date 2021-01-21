@@ -1,0 +1,20 @@
+body{
+  background-color: black;
+}
+
+h1 {
+  font-family: monospace;
+  color: red;
+  text-alighn: center;
+}
+
+h2 {
+  font-family: monospace;
+  color: red;
+  text-alighn: center;
+}
+p {
+  color: red;
+  font-family: monospace;
+  font-size:  20px
+}
