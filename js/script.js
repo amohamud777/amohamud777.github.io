@@ -6,7 +6,7 @@ let img3;
 let sound;
 
 function preload(){
-  img1 = loadImage('assets/tre.png');
+  img1 = loadImage('assets/tree-promo.jpg');
   // img2 = loadImage('assets/done.jpg');
   // img3 = loadImage('assets/poepol.jpg');
   sound = loadSound('assets/electricityArc.mp3');
