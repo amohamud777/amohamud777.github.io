@@ -1,17 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Green on a Grey Day</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.0/p5.js"></script>
-
-<script src="js/script.js"></script>
-<script src="js/p5.sound.js"></script>
-</head>
-
+<html>
+<title>Click the Images!</title>
 <body>
-</body>
+<link rel="stylesheet" href="style.css">
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"> </script>
 
+<h3>(Same park, different walk) --> </h3>
+<img class="zoom" id="footpath" src="assets/footpath.jpg"/>
+<img class="zoom" id="moss" src="assets/moss.jpg"/>
+
+<img class="electric" id="electric1" src="assets/Original.jpg"/>
+<img class="electric" id="electric2" src="assets/AC.jpeg"/>
+
+<img class="stairs" id="up" src="assets/hvn.jpg"/>
+<img class="stairs" id="down" src="assets/hl.jpg" />
+
+<audio id="zap">
+  <source src="assets/electricityArc.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="paz">
+  <source src="assets/electricityArcReverse.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="sparkle">
+  <source src="assets/sparkle.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="spooky">
+  <source src="assets/spooky_sound.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+$(document).ready(function() {
+
+  $('#moss').hide();
+  $('#electric2').hide();
+  $('#down').hide();
+
+  var zap = document.getElementById("zap");
+  var paz = document.getElementById("paz");
+  var sparkle = document.getElementById("sparkle");
+  var spooky = document.getElementById("spooky");
+
+
+  $("#electric1").on("click", function (evt){
+    zap.play();
+     $('#electric2').fadeIn(1500);
+
+  })
+
+  $("#electric2").on("click", function (evt){
+    paz.play();
+     $('#electric2').fadeOut(1500);
+
+  })
+
+  $("#footpath").on("click", function (evt){
+    sparkle.play();
+    $('#moss').fadeIn(1500);
+    $('#moss').fadeOut(1500);
+    $('#moss').fadeIn(1500);
+      $('#moss').fadeOut(1500);
+
+  })
+
+
+  $("#up").on("click", function (evt){
+    spooky.play();
+    $('#down').show();
+    $('#up').hide();
+
+  })
+  $("#down").on("click", function (evt){
+    spooky.pause();
+    $('#up').show();
+    $('#down').hide();
+  })
+})//end document ready
+
+</script>
+</body>
 </html>
